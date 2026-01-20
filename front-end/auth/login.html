@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green place</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="form-box login">
+            <form>
+                <h1>Login</h1>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required id="login-password">
+                    <i class="fa-solid fa-eye" id="toggle-login"></i>
+                </div>
+
+                <div class="forgot-link">
+                    <a href="#" id="forgot-open">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <form>
+                <h1>Registration</h1>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required id="register-password">
+                    <i class="fa-solid fa-eye" id="toggle-register"></i>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+
+            </form>
+        </div>
+
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1>Hello, Welcome!</h1>
+                <p>Don't have an account?</p>
+                <button class="btn register-btn">Register</button>
+            </div>
+
+            <div class="toggle-panel toggle-right">
+                <h1>Welcome Back!</h1>
+                <p>Already have an account?</p>
+                <button class="btn login-btn">Login</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="forgot-modal" id="forgot-modal">
+        <div class="forgot-content">
+            <h2>Reset Password</h2>
+            <p>Enter your email to reset your password</p>
+            <input type="email" placeholder="Email" id="forgot-email">
+            <button class="btn" id="forgot-send">Send</button>
+            <button class="btn" id="forgot-close" style="margin-top:10px; background:#ccc; color:#333;">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
