@@ -1,10 +1,13 @@
 import app from "./app.js";
 import dotenv from 'dotenv';
+import connectDB from "./config/db.js";
 
 dotenv.config()
 
 const startServer = async ()=>{
     try {
+        /* Connexion à la db */
+            connectDB()
         /* Démarage du serveur */
             app.on('error',(error)=>{
                 console.log('Erreur de démarage du serveur:',error)

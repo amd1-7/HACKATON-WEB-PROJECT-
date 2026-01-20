@@ -24,7 +24,7 @@ const connectDB = async ()=>{
 
         console.error("❌❌ DÉTAILS DE L'ERREUR ❌❌")
         console.error(error) /* Affiche l'erreur au complet */
-        console.error("Message:",error.message) /* Affiche l'erreur en résumé */
+        console.error("\nMessage:",error.message) /* Affiche l'erreur en résumé */
 
     }
 } /* Je met des émojis pour séparer les erreur du serveur (sans emoji) et de la liaison à la db (avec emojis) */
