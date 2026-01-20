@@ -1,6 +1,7 @@
 import app from "./app.js";
 import dotenv from 'dotenv';
 import connectDB from "./config/db.js";
+import importCommunes from "./services/importCommunes.services.js";
 
 dotenv.config()
 
@@ -18,6 +19,9 @@ const startServer = async ()=>{
                 console.log(`Le serveur écoute sur le port ${process.env.PORT}`);
                 
             })
+        
+        /* Import des villes */
+            await importCommunes();
 
 
     } catch (error) {
@@ -26,3 +30,4 @@ const startServer = async ()=>{
 }
 
 startServer()
+

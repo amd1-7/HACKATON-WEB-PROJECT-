@@ -16,7 +16,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL,{
 })
 
 /* Creation des tables via models*/
-Communes(sequelize)
+    Communes(sequelize)
 
 const connectDB = async ()=>{
     try {
