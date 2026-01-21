@@ -4,8 +4,8 @@ import cors from 'cors';
     import routesCreerUtilisateurs from './routes/creerUtilisateurs.routes.js';
     import routesSeConnecter from './routes/seConnecter.routes.js';
 /* IMPORTATION API_RECHERCHE */
-    import routesRechercheBus from './routes/rechercheBus.routes.js';
-
+    import routesRecherchesBus from './routes/recherchesBus.routes.js';
+    import routesRecherchesBornes from './routes/recherchesBornes.routes.js';
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -14,5 +14,6 @@ app.use(express.json())
     app.use('/api/auth',routesCreerUtilisateurs);
     app.use('/api/auth',routesSeConnecter);
 /* API RECHERCHE */
-    app.use('/recherche',routesRechercheBus);
+    app.use('/recherche',routesRecherchesBus);
+    app.use('/recherche',routesRecherchesBornes);
 export default app;

@@ -8,7 +8,7 @@ dotenv.config()
 const startServer = async ()=>{
     try {
         /* Connexion à la db */
-            connectDB()
+            await connectDB()
         /* Démarage du serveur */
             app.on('error',(error)=>{
                 console.log('Erreur de démarage du serveur:',error)
@@ -19,11 +19,8 @@ const startServer = async ()=>{
                 console.log(`Le serveur écoute sur le port ${process.env.PORT}`);
                 
             })
-        
-        /* Import des villes */
-            await importCommunes();
 
-
+            await importCommunes()
     } catch (error) {
         console.log(`Erreur du serveur ❌`);
     }

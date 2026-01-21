@@ -5,7 +5,7 @@ import axios from "axios";
 const Bus = sequelize.models.Bus;
 const Commune = sequelize.models.Commune;
 
-const rechercheBus = async (req, res) => { 
+const recherchesBus = async (req, res) => { 
     try {
         const { entrée } = req.body;
         
@@ -14,7 +14,7 @@ const rechercheBus = async (req, res) => {
         /* Recherche si la ville existe */
             const verifVille = await Commune.findOne({
                 where:{
-                    nom:entréeConforme
+                    commune:entréeConforme
                 }
             })
             if(!verifVille){
@@ -28,7 +28,7 @@ const rechercheBus = async (req, res) => {
                 where: {
                     [Op.or]: [
                         { codePostal: entréeConforme },
-                        { ville: entréeConforme }
+                        { commune: entréeConforme }
                     ]
                 }
             });
@@ -41,7 +41,7 @@ const rechercheBus = async (req, res) => {
 
         // 2. Si pas dans la DB on appelle l'API
             const villeInfo = await Commune.findOne({
-                where: { nom: entréeConforme }
+                where: { commune: entréeConforme }
             });
 
             console.log(`🛜 Recherche api pour : ${entréeConforme}🛜`);
@@ -68,7 +68,7 @@ const rechercheBus = async (req, res) => {
         // 3. Création de la ligne dans la DB
             await Bus.create({
                 nombre: nombreBus.toString(), // Ton modèle Bus définit 'nombre' comme STRING
-                ville: entréeConforme,
+                commune: entréeConforme,
                 codePostal: villeInfo ? villeInfo.codePostal : null
             });
 
@@ -90,4 +90,4 @@ const rechercheBus = async (req, res) => {
     }
 }
 
-export default rechercheBus;
+export default recherchesBus;

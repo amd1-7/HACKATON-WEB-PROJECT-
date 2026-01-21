@@ -7,7 +7,7 @@ const Communes = async (sequelize)=>{
             allowNull:false,
             primaryKey:true
         },
-        nom:{
+        commune:{
             type:DataTypes.STRING,
             allowNull:false,
         },

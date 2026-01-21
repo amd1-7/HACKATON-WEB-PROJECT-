@@ -6,7 +6,7 @@ const Bus = async (sequelize)=>{
             type:DataTypes.STRING,
             allowNull:false,
         },
-        ville:{
+        commune:{
             type:DataTypes.STRING,
             allowNull:false,
         },
