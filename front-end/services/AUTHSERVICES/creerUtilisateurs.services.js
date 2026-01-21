@@ -1,4 +1,4 @@
-const API_URL = `http://localhost:8080/api/auth/signin`
+const API_URL = `http://localhost:8080/api/auth/signup`
 
 const creerUtilisateursServices = async (entrée)=>{
     try {
@@ -16,7 +16,7 @@ const creerUtilisateursServices = async (entrée)=>{
         throw new Error(data.message || 'Erreur lors de la création du compte.')
     }
 
-    console.log(data)
+    return data
     
     } catch (error) {
         throw error;

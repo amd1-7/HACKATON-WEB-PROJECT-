@@ -15,7 +15,7 @@
                 <h1>Login</h1>
 
                 <div class="input-box">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-envelope"></i>
                     <input type="text" name="email" placeholder="Email" required>
                 </div>
 
@@ -30,18 +30,12 @@
                 </div>
 
                 <button type="submit" class="btn">Login</button>
-
             </form>
         </div>
 
         <div class="form-box register">
             <form>
                 <h1>Registration</h1>
-
-                <div class="input-box">
-                    <i class="fa-solid fa-user"></i>
-                    <input type="text" name="username" placeholder="Username" required>
-                </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-envelope"></i>
@@ -54,8 +48,13 @@
                     <i class="fa-solid fa-eye" id="toggle-register"></i>
                 </div>
 
-                <button type="submit" class="btn">Register</button>
+                <div class="input-box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="verifyPassword" placeholder="Confirm Password" required id="register-password-verify">
+                    <i class="fa-solid fa-eye" id="toggle-register-verify"></i>
+                </div>
 
+                <button type="submit" class="btn">Register</button>
             </form>
         </div>
 
@@ -85,6 +84,6 @@
         </div>
     </div>
 
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
 </body>
 </html>
