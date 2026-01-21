@@ -2,6 +2,8 @@ import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 import Communes from "../models/communes.models.js";
 import Utilisateurs from "../models/utilisateurs.models.js";
+import Bus from "../models/bus.models.js";
+import Bornes from "../models/bornes.models.js";
 
 dotenv.config()
 
@@ -19,21 +21,20 @@ const sequelize = new Sequelize(process.env.DATABASE_URL,{
 /* Creation des tables via models*/
     Communes(sequelize);
     Utilisateurs(sequelize);
+    Bus(sequelize);
+    Bornes(sequelize);
 
 const connectDB = async ()=>{
     try {
         /* Demande de connexion à la DB */
             sequelize.authenticate()
             console.log(`Connexion à la base de donnée:${sequelize.options.database} sur le port ${sequelize.options.host} reussi✅✅...`)
-
-
         /* Synchronisation des tables */
             await sequelize.sync({alter:true});
         /* Boucle pour afficher les tables connectées */
             Object.keys(sequelize.models).forEach(modelName => {
             const model = sequelize.models[modelName];
             console.log(`La table ${model.tableName} est bien connectée ✅`);
-        
             
         });
     } catch (error) {

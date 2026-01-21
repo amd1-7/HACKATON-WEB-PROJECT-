@@ -18,7 +18,7 @@ const importCommunes = async ()=>{
             const reponse = await axios(`https://geo.api.gouv.fr/communes?fields=nom,code,codesPostaux&format=json&geometry=centre`)
             const data = reponse.data.map(commune=>({
                 codeInsee:commune.code,
-                nom:commune.nom,
+                commune:commune.nom,
                 codePostal:commune.codesPostaux ?commune.codesPostaux[0] : null
             })) /* ⬆️ ici au cas ou il y a plusieurs code postal on prend le premier sinon null si pas de code  */
         

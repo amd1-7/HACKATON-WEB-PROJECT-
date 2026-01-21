@@ -1,11 +1,10 @@
 import { DataTypes } from "sequelize";
 
-const Communes = async (sequelize)=>{
-    sequelize.define('Commune',{
-        codeInsee:{
+const Bus = async (sequelize)=>{
+    sequelize.define('Bus',{
+        nombre:{
             type:DataTypes.STRING,
             allowNull:false,
-            primaryKey:true
         },
         commune:{
             type:DataTypes.STRING,
@@ -16,9 +15,9 @@ const Communes = async (sequelize)=>{
             allowNull:true,
         }
     },{
-        tableName:"commune",
+        tableName:"bus",
         timestamps: false
     })
 }
 
-export default Communes
+export default Bus;
