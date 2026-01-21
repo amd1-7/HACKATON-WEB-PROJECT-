@@ -8,7 +8,7 @@ const creerUtilisateurs = async(req,res)=>{
     try {
         const {mail,password,verifyPassword} = req.body /* La requète client */
         /* Enlever maj et espeace du email */
-            const mailCorrect = mail.toLowercase().trim();
+            const mailCorrect = mail.toLowerCase().trim();
 
 
         /* Verification si le mail entré est un mail */
