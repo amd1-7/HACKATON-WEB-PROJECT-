@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
 import Communes from "../models/communes.models.js";
 import Utilisateurs from "../models/utilisateurs.models.js";
+import Bus from "../models/bus.models.js";
 
 dotenv.config()
 
@@ -19,6 +20,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL,{
 /* Creation des tables via models*/
     Communes(sequelize);
     Utilisateurs(sequelize);
+    Bus(sequelize);
 
 const connectDB = async ()=>{
     try {
