@@ -11,7 +11,7 @@ const seConnecter = async(req,res)=>{
     try {
         const {mail, password} = req.body;
 
-        const mailCorrect = mail.toLowercase().trim()
+        const mailCorrect = mail.toLowerCase().trim()
 
 /* Verification si le mail existe dans la db */
         const verifEntree = await utilisateurs.findOne({

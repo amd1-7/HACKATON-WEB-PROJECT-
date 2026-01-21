@@ -7,6 +7,9 @@ const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const creerUtilisateurs = async(req,res)=>{
     try {
         const {mail,password,verifyPassword} = req.body /* La requète client */
+        /* Enlever maj et espeace du email */
+            const mailCorrect = mail.toLowercase().trim();
+
 
         /* Verification si le mail entré est un mail */
         if(!regexEmail.test(mail)){
@@ -14,7 +17,7 @@ const creerUtilisateurs = async(req,res)=>{
         }
 
         /* Verification si le mail existe */
-        const verifMailExiste = await utilisateurs.findOne({where:{mail:mail}});
+        const verifMailExiste = await utilisateurs.findOne({where:{mail:mailCorrect}});
             if(verifMailExiste){
                 return res.status(409).json({message:"Ce mail est dejà utilisé, veuillez changer de mail."})
             }
@@ -28,9 +31,6 @@ const creerUtilisateurs = async(req,res)=>{
         /* Hashage du mot de passe */
         const passwordHash = await bcrypt.hash(password,hash)
 
-        /* Enlever maj et espeace du email */
-            const mailCorrect = mail.toLowerCase().trim();
-
         /* Création du nouvel utilisateur */
         const nouvelUtilisateur = await utilisateurs.create({
             mail:mailCorrect,
@@ -41,7 +41,7 @@ const creerUtilisateurs = async(req,res)=>{
         const utilisateurReponse = nouvelUtilisateur.toJSON();
         delete utilisateurReponse.password;
 
-        console.log('Création du compte lié à ce mail:',mail)
+        console.log('Création du compte lié à ce mail:',mailCorrect)
         return res.status(200).json({
             message:"Creation du compte reussi✅",
             data:utilisateurReponse

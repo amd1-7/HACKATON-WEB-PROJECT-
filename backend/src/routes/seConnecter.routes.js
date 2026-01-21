@@ -3,6 +3,6 @@ import seConnecter from "../controllers/seConnecter.controllers.js";
 import verifToken from "../middlewares/token.middlewares.js";
 
 const routesSeConnecter = Router();
-routesSeConnecter.post('/login',verifToken,seConnecter);
+routesSeConnecter.post('/login',seConnecter);
 
 export default routesSeConnecter;
