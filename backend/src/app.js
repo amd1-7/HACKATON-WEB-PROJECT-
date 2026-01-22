@@ -6,6 +6,7 @@ import cors from 'cors';
 /* IMPORTATION API_RECHERCHE */
     import routesRecherchesBus from './routes/recherchesBus.routes.js';
     import routesRecherchesBornes from './routes/recherchesBornes.routes.js';
+    import routesRecherchesPistesCyclables from './routes/recherchesPistesCyclables.js';
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -16,4 +17,5 @@ app.use(express.json())
 /* API RECHERCHE */
     app.use('/recherche',routesRecherchesBus);
     app.use('/recherche',routesRecherchesBornes);
+    app.use('/recherche',routesRecherchesPistesCyclables)
 export default app;
