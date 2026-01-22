@@ -37,7 +37,7 @@ const recherchesBornes = async (req,res)=>{
         /* Sinon faire un appel APi */
             console.log(`🛜 Recherche api pour : ${entréeConforme}🛜`)
             /* URL à contacter pour la DATA */
-            const url = `https://opendata.reseaux-energies.fr/api/records/1.0/search/?dataset=bornes-irve&q=${encodeURIComponent(entréeConforme)}&rows=50`
+            const url = `https://opendata.reseaux-energies.fr/api/records/1.0/search/?dataset=bornes-irve&q=${encodeURIComponent(entréeConforme)}`
             
             const reponse = await axios.get(url)
             
@@ -47,6 +47,8 @@ const recherchesBornes = async (req,res)=>{
                 })
             }
 
+            const nombreBorne = reponse.data.records.fields.nbre_pdc;
+
             const data = reponse.data.records.map(borne=>({
                 adresse:borne.fields.ad_station || "Pas d'adresse repertorié",
                 nom:borne.fields.nom_station || "Pas de nom repertorié",
@@ -54,11 +56,12 @@ const recherchesBornes = async (req,res)=>{
                 commune: entréeConforme,
             }))
 
-            console.log(`Insertion de ${data.length} borne de recharge`)
+            console.log(`Insertion de ${data.length} | BORNES DE RECHARGES`)
 
             await Borne.bulkCreate(data)
             return res.status(200).json({
-                data:data
+                data:data,/* À modifier plus tard par `nombreBorne` */
+                message:"verif"
             })
     } catch (error) {
          console.log(`Erreur d'importation :${error}`);

@@ -3,7 +3,7 @@ import { DataTypes } from "sequelize";
 const Bus = async (sequelize)=>{
     sequelize.define('Bus',{
         nombre:{
-            type:DataTypes.STRING,
+            type:DataTypes.FLOAT,
             allowNull:false,
         },
         commune:{

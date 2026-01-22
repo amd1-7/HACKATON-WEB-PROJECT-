@@ -15,7 +15,7 @@ const Bornes = async (sequelize)=>{
             allowNull:false
         },
         nombre:{
-            type:DataTypes.INTEGER,
+            type:DataTypes.FLOAT,
             allowNull:true
         }
     },{

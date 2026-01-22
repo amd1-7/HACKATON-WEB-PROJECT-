@@ -65,9 +65,11 @@ const recherchesBus = async (req, res) => {
             const count = reponse.data.elements ? reponse.data.elements[0].tags.total : 0;
             const nombreBus = parseInt(count, 10) || 0;
 
+
         // 3. Création de la ligne dans la DB
+            console.log(`Insertion de ${data.length} | ARRETS DE BUS`)
             await Bus.create({
-                nombre: nombreBus.toString(), // Ton modèle Bus définit 'nombre' comme STRING
+                nombre: nombreBus.toString(),
                 commune: entréeConforme,
                 codePostal: villeInfo ? villeInfo.codePostal : null
             });
