@@ -1,0 +1,105 @@
+
+/* FONT POUR TOUTE LA PAGE */
+body, html {
+  font-family: 'Special Gothic Condensed One', sans-serif !important;
+}
+
+/* --- NAVBAR STYLES --- */
+
+.nature-navbar {
+  position: fixed; 
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: fit-content;
+  min-width: 350px; /* Un peu plus large pour accueillir le bouton */
+  
+  /* Style Nature par défaut (Mode Clair) */
+  background-color: #e8f5e9; 
+  border: 2px solid #4caf50; 
+  border-radius: 50px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  
+  padding: 10px 40px;
+  z-index: 1000;
+  
+  /* Transition fluide pour le changement de mode */
+  transition: all 0.3s ease;
+}
+
+.nature-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; 
+  margin: 0;
+}
+
+.nature-link {
+  color: #1b5e20 !important; 
+  font-size: 1.2rem; /* Un peu plus gros pour cette police */
+  font-weight: 400; /* Cette font est déjà grasse visuellement */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nature-link:hover {
+  color: #4caf50 !important;
+  transform: translateY(-2px);
+}
+
+/* --- BOUTON TOGGLE DARK MODE --- */
+.theme-btn {
+  background: none;
+  border: 1px solid #4caf50;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  color: #1b5e20;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.theme-btn:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* --- GESTION DU DARK MODE (Classes activées par JS) --- */
+
+/* La navbar en mode sombre */
+.nature-navbar.dark-mode {
+  background-color: #052e16; /* Vert forêt très sombre */
+  border-color: #86efac; /* Bordure vert clair lumineux */
+  box-shadow: 0 4px 15px rgba(0, 255, 0, 0.1);
+}
+
+/* Les liens en mode sombre */
+.nature-navbar.dark-mode .nature-link {
+  color: #dcfce7 !important; /* Texte vert très pâle */
+}
+
+.nature-navbar.dark-mode .nature-link:hover {
+  color: #86efac !important;
+}
+
+/* Le bouton en mode sombre */
+.nature-navbar.dark-mode .theme-btn {
+  border-color: #86efac;
+  color: #86efac;
+}
+
+.nature-navbar.dark-mode .theme-btn:hover {
+  background-color: #86efac;
+  color: #052e16;
+}
+
+/* --- BODY DARK MODE (Optionnel, pour tester le reste de la page) --- */
+body.body-dark {
+  background-color: #1a1a1a;
+  color: #e8f5e9;
+}
