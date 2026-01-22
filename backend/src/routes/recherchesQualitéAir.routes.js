@@ -3,6 +3,6 @@ import recherchesAir from "../controllers/recherchesQualitéAir.controllers.js";
 import verifToken from '../middlewares/token.middlewares.js';
 
 const routesRecherchesAir = Router();
-routesRecherchesAir.post('/air',verifToken,recherchesAir)
+routesRecherchesAir.post('/air',recherchesAir)
 
 export default routesRecherchesAir;

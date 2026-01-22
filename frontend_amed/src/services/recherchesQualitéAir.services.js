@@ -1,4 +1,4 @@
-const API_URL = `http://localhost:8080/recherche/bus`
+const API_URL = `http://localhost:8080/recherche/air`
 
 const recherchesQualitéAirServices = async (entrée)=>{
     try {

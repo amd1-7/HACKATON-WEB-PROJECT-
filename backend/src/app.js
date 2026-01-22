@@ -9,7 +9,6 @@ import cors from 'cors';
     import routesRecherchesPistesCyclables from './routes/recherchesPistesCyclables.js';
     import routesRecherchesAir from './routes/recherchesQualitéAir.routes.js';
     import routesRecherchesEnergiesLogement from './routes/recherchesEnergieLogement.js';
-    import routesToken from './routes/token.routes.js';
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -23,6 +22,4 @@ app.use(express.json())
     app.use('/recherche',routesRecherchesPistesCyclables);
     app.use('/recherche',routesRecherchesAir);
     app.use('/recherche',routesRecherchesEnergiesLogement)
-
-    app.use('/token',routesToken)
 export default app;

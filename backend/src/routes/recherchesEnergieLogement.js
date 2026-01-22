@@ -3,6 +3,6 @@ import recherchesEnergiesLogement from "../controllers/recherchesEnergieLogement
 import verifToken from '../middlewares/token.middlewares.js';
 
 const routesRecherchesEnergiesLogement = Router();
-routesRecherchesEnergiesLogement.post('/energie-logement',verifToken,recherchesEnergiesLogement)
+routesRecherchesEnergiesLogement.post('/energie-logement',recherchesEnergiesLogement)
 
 export default routesRecherchesEnergiesLogement;
