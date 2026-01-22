@@ -1,11 +1,17 @@
 import './App.css';
 import Loyout from './CONTENENT/Loyout.js'
+import Accueil from './CONTENENT/Accueil.js';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Loyout></Loyout>
-    </div>
+    <BrowserRouter>
+      <Loyout>
+        <Routes>
+          <Route path='/' element={<Accueil/>}/>
+        </Routes>
+      </Loyout>
+    </BrowserRouter>
   );
 }
 

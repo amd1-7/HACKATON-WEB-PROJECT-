@@ -1,7 +1,11 @@
+/* Loyout.css */
 
-/* FONT POUR TOUTE LA PAGE */
+/* 1. APPLICATION DE LA TYPO GLOBALE */
 body, html {
+  /* On utilise la font importée dans ton index.html */
   font-family: 'Special Gothic Condensed One', sans-serif !important;
+  /* Transition douce pour le changement de couleur de fond global */
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* --- NAVBAR STYLES --- */
@@ -102,4 +106,51 @@ body, html {
 body.body-dark {
   background-color: #1a1a1a;
   color: #e8f5e9;
+}
+/* --- SEARCH BAR NATURE --- */
+.nature-search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem; /* Un peu d'espace après les liens */
+}
+
+.nature-search {
+  border: 1px solid #4caf50;
+  border-radius: 20px; /* Bien arrondi */
+  background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent */
+  padding: 5px 15px;
+  color: #1b5e20;
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 150px; /* Taille de base */
+}
+
+/* Quand on écrit dedans */
+.nature-search:focus {
+  background-color: #ffffff;
+  width: 200px; /* Elle s'agrandit un peu au focus ! */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+/* Placeholder (le texte "Rechercher...") */
+.nature-search::placeholder {
+  color: #4caf50;
+  opacity: 0.7;
+}
+
+/* Adaptation Dark Mode pour la recherche */
+.nature-navbar.dark-mode .nature-search {
+  background-color: rgba(5, 46, 22, 0.6);
+  border-color: #86efac;
+  color: #dcfce7;
+}
+
+.nature-navbar.dark-mode .nature-search:focus {
+  background-color: #052e16;
+  box-shadow: 0 0 8px rgba(134, 239, 172, 0.4);
+}
+
+.nature-navbar.dark-mode .nature-search::placeholder {
+  color: #86efac;
 }

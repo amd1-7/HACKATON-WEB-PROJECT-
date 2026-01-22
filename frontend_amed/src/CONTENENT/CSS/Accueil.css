@@ -1,0 +1,141 @@
+/* --- CONTENEUR DE RECHERCHE (Pour aligner Titre + Barre) --- */
+.search-wrapper {
+  display: flex;
+  flex-direction: column; /* On empile le texte et la barre */
+  align-items: center; /* On centre le tout */
+  margin-bottom: 2rem; /* Espace sous la barre */
+  width: 100%;
+}
+
+/* --- LE TITRE "RECHERCHE TA VILLE" --- */
+.search-label {
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  font-size: 1.5rem;
+  color: #1b5e20; /* Vert foncé */
+  margin-bottom: 10px; /* Espace entre le texte et la barre */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* --- LA BARRE DE RECHERCHE (Version Améliorée) --- */
+.nature-search {
+  border: 2px solid #4caf50; /* Bordure plus épaisse */
+  border-radius: 30px; /* Plus arrondi */
+  
+  /* TAILLE : Beaucoup plus grande */
+  width: 100%; 
+  max-width: 500px; /* Elle prendra de la place mais pas tout l'écran */
+  padding: 12px 25px; /* Plus d'espace dedans */
+  font-size: 1.2rem; /* Texte plus gros */
+  
+  background-color: rgba(255, 255, 255, 0.9); /* Fond presque opaque */
+  color: #1b5e20;
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombre pour le relief */
+  transition: all 0.3s ease;
+}
+
+.nature-search:focus {
+  transform: scale(1.02); /* Petit zoom quand on clique */
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* --- CORRECTION MODE SOMBRE (Le point crucial) --- */
+/* On utilise body.body-dark car c'est la classe qu'on met sur le body */
+
+body.body-dark .search-label {
+  color: #86efac; /* Le titre devient vert fluo lumineux */
+  text-shadow: 0 0 10px rgba(134, 239, 172, 0.3); /* Effet néon */
+}
+
+body.body-dark .nature-search {
+  background-color: #1e293b; /* Fond gris-bleu foncé (plus lisible que transparent) */
+  border-color: #86efac; /* Bordure lumineuse */
+  color: #ffffff; /* Texte blanc pur */
+  box-shadow: 0 0 15px rgba(134, 239, 172, 0.1); /* Glow vert */
+}
+
+body.body-dark .nature-search::placeholder {
+  color: #94a3b8; /* Placeholder gris clair */
+}
+
+body.body-dark .nature-search:focus {
+  background-color: #0f172a; /* Encore plus foncé au focus */
+  box-shadow: 0 0 20px rgba(134, 239, 172, 0.25);
+}
+
+/* ... (Garde tout ton CSS précédent ici) ... */
+
+/* --- NOUVEAU : CONTENEUR DES BLOCS D'INFO --- */
+.info-blocks-container {
+  display: flex;
+  justify-content: center; /* Centre les blocs horizontalement */
+  gap: 2rem; /* Espace entre les deux blocs */
+  flex-wrap: wrap; /* Permet aux blocs de passer l'un sous l'autre sur petit écran */
+  width: 90%;
+  max-width: 1000px; /* Empêche de devenir trop large sur grand écran */
+  margin-top: 3rem; /* Espace au-dessus (sous la barre de recherche) */
+}
+
+/* --- STYLE D'UN BLOC INDIVIDUEL --- */
+.nature-block {
+  /* Flex: grandit (1), rétrécit (1), taille de base (300px) */
+  flex: 1 1 300px; 
+  
+  /* Style Nature (Mode Clair) */
+  background-color: #e8f5e9; /* Vert très pâle, comme la navbar */
+  border: 2px solid #4caf50;
+  border-radius: 30px; /* Coins bien arrondis */
+  padding: 25px;
+  
+  text-align: left; /* Texte aligné à gauche pour la lisibilité */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Petit effet au survol des blocs */
+.nature-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(76, 175, 80, 0.2);
+}
+
+/* Titres des blocs */
+.nature-block h3 {
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  color: #1b5e20; /* Vert foncé */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #4caf50; /* Petite ligne sous le titre */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Paragraphes des blocs */
+.nature-block p {
+  /* On peut utiliser une font standard pour le corps du texte pour la lisibilité, 
+     ou garder la font du titre si tu préfères le style poster partout. 
+     Ici je garde la font du titre comme demandé globalement. */
+  font-family: 'Special Gothic Condensed One', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #2e7d32;
+  margin: 0;
+}
+
+/* --- ADAPTATION MODE SOMBRE (Dark Mode) --- */
+body.body-dark .nature-block {
+  background-color: #052e16; /* Fond vert forêt très sombre */
+  border-color: #86efac; /* Bordure lumineuse */
+  box-shadow: 0 4px 15px rgba(134, 239, 172, 0.1);
+}
+
+body.body-dark .nature-block h3 {
+  color: #86efac; /* Titre néon */
+  border-bottom-color: #86efac;
+}
+
+body.body-dark .nature-block p {
+  color: #dcfce7; /* Texte clair */
+}
