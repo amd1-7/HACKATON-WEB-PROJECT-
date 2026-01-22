@@ -3,6 +3,6 @@ import recherchesPistesCyclables from "../controllers/recherchesPistesCyclables.
 import verifToken from '../middlewares/token.middlewares.js'
 
 const routesRecherchesPistesCyclables = Router();
-routesRecherchesPistesCyclables.post('/pisteCyclable',verifToken,recherchesPistesCyclables)
+routesRecherchesPistesCyclables.post('/piste-cyclable',verifToken,recherchesPistesCyclables)
 
 export default routesRecherchesPistesCyclables;
