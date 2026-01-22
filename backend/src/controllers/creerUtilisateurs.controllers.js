@@ -4,11 +4,6 @@ import { sequelize } from "../config/db.js";
 const utilisateurs = sequelize.models.Utilisateur;
 const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const creerUtilisateurs = async (req, res) => {
-  try {
-    const { mail, password, verifyPassword } = req.body; /* La requète client */
-    /* Enlever maj et espeace du email */
-    const mailCorrect = mail.toLowerCase().trim();
 const creerUtilisateurs = async(req,res)=>{
     try {
         const {mail,password,verifyPassword} = req.body /* La requète client */
