@@ -7,6 +7,7 @@ import cors from 'cors';
     import routesRecherchesBus from './routes/recherchesBus.routes.js';
     import routesRecherchesBornes from './routes/recherchesBornes.routes.js';
     import routesRecherchesPistesCyclables from './routes/recherchesPistesCyclables.js';
+    import routesRecherchesAir from './routes/recherchesQualitéAir.routes.js';
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -17,5 +18,6 @@ app.use(express.json())
 /* API RECHERCHE */
     app.use('/recherche',routesRecherchesBus);
     app.use('/recherche',routesRecherchesBornes);
-    app.use('/recherche',routesRecherchesPistesCyclables)
+    app.use('/recherche',routesRecherchesPistesCyclables);
+    app.use('/recherche',routesRecherchesAir);
 export default app;

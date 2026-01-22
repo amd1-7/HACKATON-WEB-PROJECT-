@@ -5,6 +5,7 @@ import Utilisateurs from "../models/utilisateurs.models.js";
 import Bus from "../models/bus.models.js";
 import Bornes from "../models/bornes.models.js";
 import PistesCyclables from "../models/PistesCyclables.models.js";
+import Air from "../models/Air.models.js";
 
 dotenv.config()
 
@@ -25,6 +26,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL,{
     Bus(sequelize);
     Bornes(sequelize);
     PistesCyclables(sequelize);
+    Air(sequelize);
 
 const connectDB = async ()=>{
     try {
